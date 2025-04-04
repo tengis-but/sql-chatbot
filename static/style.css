@@ -1,0 +1,136 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.left-panel, .right-panel {
+    padding: 10px;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.left-panel {
+    width: 50%;
+    position: relative;
+}
+
+.right-panel {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-display {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #ffffff;
+    position: relative; /* For centering the loader */
+}
+
+.user {
+    text-align: right;
+    color: #000000;
+    margin: 5px 0;
+}
+
+.ai {
+    text-align: left;
+    color: #4A4A4A;
+    margin: 5px 0;
+}
+
+form {
+    padding: 8px;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 80px 10px 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 15px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #006400;
+    color: #ffffff;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    border-radius: 15px;
+    position: absolute;
+    right: 5px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #abc32f;
+}
+
+#export-btn {
+    position: absolute; /* Fixed from 'right' which isn’t a valid value */
+    top: 10px;
+    right: 10px; /* Moved to top-right as you requested */
+    display: none;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 6px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Loading Spinner */
+.loader {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #006400; /* Matches button color */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

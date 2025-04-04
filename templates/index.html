@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coretech SQL Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <button id="export-btn" style="display:none;">Export CSV</button>
+            <div id="table-output"></div>
+            <div id="graph-output"></div>
+        </div>
+        <div class="right-panel">
+            <div id="chat-display" class="chat-display">
+                <div id="loading" class="loader" style="display:none;"></div>
+                {% for q, a in chat_history %}
+                    <p class="user">{{ q }}</p>
+                    <p class="ai">{{ a }}</p>
+                {% endfor %}
+            </div>
+            <form id="chat-form">
+                <div class="input-container">
+                    <input type="text" id="question" name="question" placeholder="Ask a question..." required>
+                    <button type="submit">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
